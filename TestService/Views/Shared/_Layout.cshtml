@@ -1,0 +1,546 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>@Page.Title</title>
+    <meta name="description">
+    <meta name="keywords" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-site-verification" content="NvDNnW3jNgV22pmEbRxPzY6yYqiDLKxzkJ1XkkfIVZQ" />
+
+
+    <link rel="stylesheet" type="text/css" href="~/Content/main-stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style1.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.css" />
+
+    <link rel="stylesheet" type="text/css" href="~/Content/owl.carousel.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="~/Content/SearchBox.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/front-page.css" />
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+    <link href="~/Content/animate.css" rel="stylesheet" type="text/css" />
+
+    @*This Three element use for Client Site Validation*@
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+
+
+    <meta name="ROBOTS" content="index, follow" />
+
+    <meta name="theme-color" content="#f9b217">
+
+    <style>
+        #body {
+            background: none !important;
+        }
+    </style>
+    @RenderSection("styles", required: false)
+</head>
+
+<body class="sell" oncontextmenu="return false">
+    <div class="visible-2"></div>
+    <header>
+        <div id="banner-1">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5 header_part">
+
+                        <div class="logo" style="margin-top: 7px">
+                            <a href="~/Home/Index">
+                                <img src="../images/logo-website.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class=" col-lg-10 col-md-10 col-sm-9 col-xs-7 text-left class-for-searching-bar">
+                        <div class="mobile_click_menu hidden-lg hidden-md  ">
+                            <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="toptrip-bar">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                                    @Html.Partial("_LoginPV")
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <div class="clear"></div>
+    <!-- Footer -->
+    <section class="contact section-padding" data-scroll-index="6">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-7 col-md-7 footer-form">
+                    <form class="form" action="javascript:void(0)">
+
+                        <div class="messages"></div>
+
+                        <div class="controls">
+                            <h5>Enquiry</h5>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 pdr-0">
+                                    <div class="form-group">
+                                        <input type="text" class="name" tabindex="1" id="txtname" placeholder="Name" maxlength="20" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="name" tabindex="2" id="txtbusinessname" placeholder="Business Name" maxlength="30" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6  pdr-0">
+                                    <div class="form-group">
+                                        <input type="text" class="name" tabindex="3" id="txtemail" placeholder="Email" maxlength="30" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="name cssOnlyNumeric" tabindex="4" id="txtphoneno" maxlength="10" placeholder="Phone Number" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 pdr-0">
+                                    <div class="form-group">
+                                        <input type="text" class="name" tabindex="5" id="txtstate" placeholder="State" maxlength="20" required="required">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="name" tabindex="6" id="txtcity" name="city" placeholder="City" maxlength="20" required="required">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <div class="form-group has-error has-danger">
+                                        <textarea id="txtmessgae" tabindex="7" placeholder="Message" maxlength="100" required="required"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <button type="submit" id="btnsendmessage" tabindex="8" class="butn"><span>Send Message</span></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-5 col-md-5 contact-details">
+                    <div class="contact-info mb-md50">
+
+                        <div class="item">
+                            <span class="icon icon-basic-tablet"></span>
+                            <div class="cont">
+                                <figure><img src="../images/phone-footer-icon.png"></figure>
+                                <div class="content-cont-cls">
+                                    <h6>Phone : </h6>
+                                    <p>+880 - 1787787688</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <span class="icon icon-basic-mail-open-text"></span>
+                            <div class="cont">
+                                <figure><img src="~/images/email-foot-icon.png"></figure>
+                                <div class="content-cont-cls">
+                                    <h6>Email : </h6>
+                                    <p>seller@TestService.com </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <span class="icon icon-basic-geolocalize-05"></span>
+                            <div class="cont">
+                                <figure><img src="../images/location-footer.png"></figure>
+                                <div class="content-cont-cls">
+                                    <h6>Address : </h6>
+                                    <p> Dhaka </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item  social-link-cls">
+                            <span class="icon icon-basic-geolocalize-05"></span>
+                            <div class="cont">
+                                <figure><img src="../images/website-icon.png"></figure>
+                                <div class="content-cont-cls">
+                                    <p><a href="https://www.facebook.com//" target="_blank" class="social-link fb-link"><i class="fa fa-facebook"></i></a> <a href="https://twitter.com/" target="_blank" class="social-link"><i class="fa fa-twitter"></i></a> <a href="https://www.linkedin.com/company/" target="_blank" class="social-link"><i class="fa fa-linkedin"></i></a> <a href="https://plus.google.com/u/0/b/111483657848730543868/+" target="_blank" class="social-link"><i class="fa fa-google-plus"></i></a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="movetop">
+
+        <a id="scrlTop" href="#" class="back-to-top">
+            <img src="../images/scrollup.png" alt="" />
+        </a>
+    </div>
+    <div class="copyright">
+
+        <div class="container">
+            <div class="">
+                <p>&copy; @DateTime.Now.Year -All Rights Reserved | http://TestService.com/</p>
+            </div>
+
+
+        </div>
+    </div>
+    <input type="hidden" id="rurl" />
+    <p class="scrollup"><i class="fa fa-chevron-up"></i></p>
+    <a href="https://www.alexa.com/siteinfo/http://pikjets.com/" style="display: none">
+        <script type='text/javascript' src='https://xslt.alexa.com/site_stats/js/s/a?url=http://pikjets.com/'></script>
+    </a>
+    <script src="~/Scripts/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/owl.carousel-new.js" type="text/javascript"></script>
+    <script src="~/Scripts/Common.js" type="text/javascript"></script>
+    @*<script src="~/Scripts/JS_ATCShopping/jquery.easing.min.html" type="text/javascript">*@
+
+    </script>
+    <script src="~/Scripts/referral/jquery.newstape.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Scripts/AddToCart.js"></script>
+    <script src="~/Scripts/MyCustomJS.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#txtname").keyup(function (event) {
+                if (event.keyCode == 32) {
+                    $("#txtname").val($("#txtname").val() + ' ');
+                }
+            });
+            $("#txtbusinessname").keyup(function (event) {
+                if (event.keyCode == 32) {
+                    $("#txtbusinessname").val($("#txtbusinessname").val() + ' ');
+                }
+            });
+            $("#txtstate").keyup(function (event) {
+                if (event.keyCode == 32) {
+                    $("#txtstate").val($("#txtstate").val() + ' ');
+                }
+            });
+            $("#txtcity").keyup(function (event) {
+                if (event.keyCode == 32) {
+                    $("#txtcity").val($("#txtcity").val() + ' ');
+                }
+            });
+
+            $('.nav-parent > a').on('click', function () {
+                var gran = $(this).closest('.nav');
+                var parent = $(this).parent();
+                var sub = parent.find('> ul');
+
+                if (sub.is(':visible')) {
+                    sub.slideUp(200);
+                    if (parent.hasClass('nav-active')) { parent.removeClass('nav-active'); }
+                } else {
+                    $(gran).find('.children').each(function () {
+                        $(this).slideUp();
+                    });
+
+                    sub.slideDown(200);
+                    if (!parent.hasClass('active')) { parent.addClass('nav-active'); }
+                }
+                return false;
+            });
+
+            $('#btnsendmessage').click(function () {
+                var custName = "", custBusinessname = "", custEmail = "", custphonenumber = "", custstate = "", custcity = "", custMessagae = "";
+                custName = $('#txtname').val();
+                custBusinessname = $('#txtbusinessname').val();
+                custEmail = $('#txtemail').val();
+                custphonenumber = $('#txtphoneno').val();
+                custstate = $('#txtstate').val();
+                custcity = $('#txtcity').val();
+                custMessagae = $('#txtmessgae').val();
+                if (custName == "") {
+                    AddtxtErroHover("txtname");
+                    AddErrorSpanAbove("txtname", "LoginValidation", "Please enter name");
+                    $(this).focus();
+                    return false;
+                }
+                if (custEmail == "") {
+                    AddtxtErroHover("txtemail");
+                    AddErrorSpanAbove("txtemail", "LoginValidation", "Please enter email id");
+                    $(this).focus();
+                    return false;
+                }
+                if (custEmail != "") {
+                    if (!validateEmail(custEmail)) {
+                        AddtxtErroHover("txtemail");
+                        AddErrorSpanAbove("txtemail", "LoginValidation", "Please enter valid email id");
+                        $(this).focus();
+                        return false;
+                    }
+                }
+                if (custphonenumber == "") {
+                    AddtxtErroHover("txtphoneno");
+                    AddErrorSpanAbove("txtphoneno", "LoginValidation", "Please enter phone no.");
+                    $(this).focus();
+                    return false;
+                }
+                if (custphonenumber != "") {
+                    if (custphonenumber.length < 10) {
+                        AddtxtErroHover("txtphoneno");
+                        AddErrorSpanAbove("txtphoneno", "LoginValidation", "Please enter valid phone no.");
+                        $(this).focus();
+                        return false;
+                    }
+                }
+                if (custstate == "") {
+                    AddtxtErroHover("txtstate");
+                    AddErrorSpanAbove("txtstate", "LoginValidation", "Please enter state.");
+                    $(this).focus();
+                    return false;
+                }
+                if (custcity == "") {
+                    AddtxtErroHover("txtcity");
+                    AddErrorSpanAbove("txtcity", "LoginValidation", "Please enter city.");
+                    $(this).focus();
+                    return false;
+                }
+                if (custMessagae == "") {
+                    AddtxtErroHover("txtmessgae");
+                    AddErrorSpanAbove("txtmessgae", "LoginValidation", "Please enter message");
+                    $(this).focus();
+                    return false;
+                }
+                ShowProgressOnBody();
+                $.ajax({
+                    url: '/Home/SaveMerchantEnquiry',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        Name: custName,
+                        businessname: custBusinessname,
+                        Email: custEmail,
+                        phonenumber: custphonenumber,
+                        state: custstate,
+                        city: custcity,
+                        Messagae: custMessagae
+                    },
+                    success: function (Data) {
+                        RemoveProgressFromBody();
+                        $('#txtname').val('');
+                        $('#txtbusinessname').val('');
+                        $('#txtphoneno').val('');
+                        $('#txtstate').val('');
+                        $('#txtcity').val('');
+                        $('#txtmessgae').val('');
+                        ShowSuccessPopup("Message", "Enquiry submitted successfully.");
+                        location.reload();
+                    },
+                    error: function (ErrorData) {
+                        RemoveProgressFromBody();
+                        ShowAlertPopup("Alert", "Some error occoured");
+                    }
+                });
+
+
+            });
+
+        });
+
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$(".horizental-menubar").css("display", "block");
+            $("#mob-catmenu").click(function () {
+                $(".horizental-menubar").addClass("mobile-cat-menu");
+                $(".mobile-cat-menu").find('#mob-catmenu').css("display", "none");
+            });
+
+            $('#BtnCancelData').click(function () {
+                $('#DivForFeedBack').css("display", "none");
+                $('.popup-overlay').css("display", "none");
+                return false;
+            });
+
+            $('#BtnSubmitData').click(function () {
+                if ($("#txtlookingfor").val() == "") {
+                    ShowAlertPopup("Alert", "Please Enter Looking For.");
+                    $("#txtlookingfor").focus();
+                    return false;
+                }
+                else if ($("#txtlookingforemailid").val() == "" && $("#txtlookingformobileno").val() == "") {
+                    ShowAlertPopup("Alert", "Please Enter Either Email Id Or Mobile.");
+                    $("#txtlookingforemailid").focus();
+                    return false;
+                }
+                $.ajax({
+                    url: '/Home/SaveSystemEnquiry',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        LookingFor: $("#txtlookingfor").val().split("'").join("`"),
+                        EmailId: $("#txtlookingforemailid").val().split("'").join("`"),
+                        Mbile: $("#txtlookingformobileno").val()
+                    },
+                    success: function (Data) {
+                        ShowSuccessPopup("Message", "Thank you for your feedback.");
+                        $('#DivForFeedBack').css("display", "none");
+                        $('.popup-overlay').css("display", "none");
+                    },
+                    error: function (ErrorData) {
+                        $('#DivForFeedBack').css("display", "none");
+                        $('.popup-overlay').css("display", "none");
+                    }
+                });
+                return false;
+            });
+
+
+        });
+
+    </script>
+
+    @*<script src="~/Scripts/JS_ATCShopping/NewsLetter.html"></script>*@
+
+    <script type="text/javascript">
+
+        //jQuery(document).ready(function () {
+        //    jQuery("#mobile_search").click(function () {
+        //        jQuery("#search_show").slideToggle("fast");
+        //        jQuery(".software-panel-left").hide("fast");
+        //    });
+        //});
+
+        //jQuery(document).ready(function () {
+        //    jQuery(".mobile_click_menu .fa-bars").click(function () {
+        //        jQuery(".software-panel-left").slideToggle("fast");
+        //        jQuery("#search_show").hide("fast");
+        //    });
+        //});
+
+        jQuery(document).ready(function () {
+            jQuery("#mobile_search").click(function () {
+                jQuery("#search_show").slideToggle("fast");
+                jQuery(".visible-2").toggleClass("close-menu");
+                jQuery(".software-panel-left").hide("fast");
+            });
+            jQuery(".visible-2").click(function () {
+                jQuery("#search_show").hide("fast");
+                jQuery(".visible-2").removeClass("close-menu");
+            });
+        });
+
+        jQuery(document).ready(function () {
+            jQuery(".mobile_click_menu .fa-bars").click(function () {
+                jQuery(".mobile-cat-menu").slideToggle("fast");
+                jQuery(".ecoomerce-shipping-guide").hide("fast");
+                jQuery(".bottom-main").hide("fast");
+                jQuery("#search_show").hide("fast");
+                jQuery(".visible-2").removeClass("close-menu");
+            });
+
+            $(".backtohome").click(function () {
+                jQuery(".mobile-cat-menu").slideToggle("fast");
+                jQuery(".ecoomerce-shipping-guide").show("fast");
+                jQuery(".bottom-main").show("fast");
+                jQuery("#search_show").show("fast");
+            });
+
+            $("#promotional-content-show").click(function () {
+                $(".promotional-content").css("height", "auto", "overflow", "auto");
+                $("#promotional-content-show").css("display", "none")
+            });
+
+
+        });
+        function Logout() {
+            $.ajax({
+                url: '/visitor_signup/Logout',
+                type: 'POST',
+                dataType: 'json',
+                data: "",
+                success: function (data) {
+                    if (data == "Logout") {
+                        window.location.href = "../merchant-login.html";
+                    }
+                }
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#mobile-drop-down").click(function () {
+                $(".dropdown-menu").toggle();
+            });
+
+            $(".false-input-search").click(function () {
+                $("#search_show").addClass("mobserch-area");
+            });
+
+            $(".searchbackbutton").click(function () {
+                $("#search_show").removeClass("mobserch-area");
+            });
+
+
+            $("#categories").mouseenter(function () {
+                $("#shopping-cat-item").css("display", "block");
+            });
+
+            $("#categoriesContent").mouseleave(function () {
+
+                $("#shopping-cat-item").css("display", "none");
+
+            });
+
+            //$("img").on("error", function () {
+            //    $(this).attr('src', 'images/NoImage.png');
+            //});
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollup').fadeIn();
+                } else {
+                    $('.scrollup').fadeOut();
+                }
+            });
+            $('.scrollup').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+
+            $("#categories .box-head").click(function () {
+
+                $("#shopping-cat-item").toggle();
+
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿
+@{ ViewBag.Title = "searchEmployee"; }
+
+
+<div class="inner-banner-cls">
+    <div class="container">
+        <h1>Search Products using Product List</h1>
+    </div>
+</div>
+<div class="container mt-3">
+   
+    <div class="row">
+        <div class="col-md-6 clearfix mt-1" style="margin-left:110px">
+            @using (Ajax.BeginForm("EpmName", "Products", new AjaxOptions { UpdateTargetId = "tblEmployeeResult", HttpMethod = "POST", InsertionMode = InsertionMode.Replace }))
+            {
+<div class="form-group row-cols-md-4">
+    <div class="input-group">
+        <input type="text" name="Name" class="form-control" placeholder="PRODUCT NAME" />
+        <span class="input-group-btn">
+            <button class="btn btn-success">Go!</button>
+        </span>
+    </div>
+</div>}
+        </div>
+    </div>
+
+
+    <div class="col">
+        <div id="tblEmployeeResult">
+            @Html.Action("srEmployee", "Products")
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}

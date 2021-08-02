@@ -1,0 +1,88 @@
+﻿@model IEnumerable<TestService.Models.Products>
+@{
+    ViewBag.Title = "Index";
+}
+<h2 class="text-center mt-3" style="color:#020240">Product List</h2>
+<div style="margin-left:100px" class="container">
+    <p class="text-right ">
+        @Html.ActionLink(" Create New", "Create", "Products", new { @class = "btn btn-primary btn-sm fa fa-plus" })
+    </p>
+    <div class="col">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="bg-green" style="color:white">Product Name</th>
+                    <th class="bg-green" style="color:white">Quantity</th>
+                    <th class="bg-green" style="color:white">Price</th>
+                    <th class="bg-green" style="color:white">Entry Date</th>
+                    <th class="bg-green" style="color:white">Picture</th>
+                    <th class="bg-green" style="color:white">Products Category</th>
+                    <th class="bg-green text-center" style="color:white">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><p class="text-center">@item.ProductName</p></td>
+                        <td><p class="text-center">@item.Quantity</p></td>
+                        <td><p class="text-center">@item.Price</p></td>
+                        <td><p class="text-center">@item.EntryDate.ToShortDateString() </p></td>
+                        <td>
+                            <p class="text-center"><img src="@Url.Content(item.Picture)" width="50" height="30" /></p>
+                        </td>
+                        <td><p class="text-center">@item.ProductsCategory.categoryName</p></td>
+                        <td>
+                            <p class="text-center">
+                                @Html.ActionLink(" ", "Edit", new { id = item.ProductsId }, new { @class = "btn btn-primary btn-sm fa fa-edit" })
+                                @Html.ActionLink("  ", "Delete", new { id = item.ProductsId }, new { @class = "btn btn-danger btn-sm fa fa-trash", onclick = "return confirm('Are You Sure Want To Delete Employee Id-" + item.ProductsId + "');" })
+                            </p>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="pricing-struc-cls">
+    <div class="container">
+        <div class="gst-price">
+
+            <div class="row">
+
+                <div class="col-sm-3">
+                    <div class="market-place-fee">
+                        <figure><img src="~/images/charges.svg"></figure>
+                        <h2> Fixed Charge</h2>
+                        <p> A small amount charged by shopping on all transaction</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="market-place-fee">
+                        <figure><img src="~/images/delivery-fee.svg"></figure>
+                        <h2>Delivery Fee</h2>
+                        <p>Calculated on the basis of product weight and location of delivery</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="market-place-fee">
+                        <figure><img src="~/images/commission-fee.svg"></figure>
+                        <h2>Commission Fee</h2>
+                        <p>Depends upon the category and sub category of order</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="market-place-fee">
+                        <figure><img src="~/images/collection-fee.svg"></figure>
+                        <h2>Collection Fee</h2>
+                        <p>Payments are charged on every sale</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

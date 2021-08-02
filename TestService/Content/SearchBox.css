@@ -1,0 +1,240 @@
+﻿ .master-search-box {
+    height: 33px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #ff4303;
+    position: relative;
+    border: 1px solid #DDDDDD;
+    width:405px;
+     z-index:99999999;
+}
+        .cssNoRecordFound{
+            font-size:12px;
+            color:#646a6d;
+            padding:5px 0px 5px 15px;
+        }
+
+        .search-box {
+
+            z-index:999 !important;
+        }
+
+       .cssStateAndCity {
+            padding-left:7px;
+            color:#5B5656 !important;
+            font-size:12px;
+        }
+       .cssLocation{
+            float:none !Important;
+            /*text-transform:capitalize !important;*/
+        }
+
+.cssHighLightedSearch {
+    color: #FB5C26;
+}
+
+        .locationItem {
+            background-color: #ffffff;
+            border: 1px solid #B4B4B4;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+            display: block;
+            margin-left: 27px;
+            margin-top: 10px;
+            max-height: 322px;
+            min-width: 350px;
+            overflow: auto;
+            overflow-x: hidden;
+            position: relative;
+            top: 26px;
+            left:-26px;
+            z-index: 999999;
+             display:none;
+             position:absolute;
+             text-align:left;
+        }
+
+         .locationItem a {
+         
+            width: 100%;
+            display:inline-block;
+           
+            font-size: 13px;
+            color: #000000;
+            padding:8px 7px 8px 5px;
+            text-decoration:none;
+            
+        }
+
+
+
+         .locationItem .cssDivLocationData {
+            vertical-align: middle;
+          
+         
+            border-bottom: 1px solid #B1EBFD;
+          
+         
+            white-space: nowrap;
+            font-family: Arial,Helvetica,sans-serif;
+            background: url("../images/location_icon.html") 10px 11px no-repeat;
+         
+            padding-left:20px;
+           
+        }
+
+
+        .locationItem .cssDivLocationData:hover {
+            background-color: #C5F3E5;
+          
+          
+           
+            cursor: pointer;
+        }
+
+
+         .locationItem .cssDivLocationDataActive {
+              vertical-align: middle;
+            width: 516px;
+            height: 23px;
+            border-bottom: 1px solid #B1EBFD;
+            /*border-left: 1px solid #029CCA;*/
+            padding: 1px 15px 12px 13px;
+            white-space: nowrap;
+            font-family: Arial,Helvetica,sans-serif;
+            background: url("../images/location_icon.html") left 9px no-repeat;
+            margin-left: 5px;
+            padding-left: 12px;
+            background-color: #C5F3E5;
+            border-width: 1px;
+            border-color: #89EECF;
+            border-top: 1px solid #89EECF;
+            cursor: pointer;
+        }
+
+        .searchItem {
+             text-align:left;
+            background-color: #FFFFFF;
+            /*border-bottom: 1px solid #f1f1f1;*/
+            border: 1px solid #B4B4B4;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+            display: block;
+            margin-left: 27px;
+            margin-top: 10px;
+            max-height: 322px;
+            overflow: auto;
+            overflow-x: hidden;
+            position: absolute;
+            left:0;
+  
+        
+            z-index: 999999999;
+            display: none;
+            
+        }
+
+        .searchItem a{
+        
+            width:100%;
+            display:inline-block;
+      
+    padding:8px 7px 8px 5px;
+ font-size:13px !important;
+   font-family: Arial,Helvetica,sans-serif;
+    color: #111;
+    text-decoration:none;
+        }
+
+
+      
+        .cssDivSerachData {
+             vertical-align: middle;
+            width: 516px;
+          
+         
+            border-bottom: 1px solid #B1EBFD;
+            /*border-left: 1px solid #029CCA;*/
+            padding-left:13px;
+            white-space: nowrap;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 15px;
+           text-transform:capitalize;
+        }
+          
+
+        .cssDivSerachData:hover {
+        background-color: #f8f1e1;
+      
+       
+        cursor:pointer;
+        }
+     
+        .cssSearchDataLocation {
+            background-image:url("../images/add-icon.html");
+            background-repeat:no-repeat;
+            margin-left:5px;
+              padding-left:12px;
+            font-size:12px;
+            color:#02AD79;
+        }
+
+        .cssPlusText {
+            color:#02AD79;
+            font-size:12px;
+            padding-left:8px;
+            
+        }
+
+         .notrated {
+            font-size: 12px;
+             font-weight:bold;
+        }
+
+        .rated {
+            font-size: 12px;
+            font-weight:bold;
+            color: #E34524 !important;
+        }
+
+
+        
+.ratedSearch {
+        color:#FC2E5A;
+    font-size:15px;
+}
+.notratedSearch {
+    color:#646464;
+    font-size:15px;
+
+}
+
+        .cssDivRatings
+         {
+            width:100px;
+        }
+
+.LocationActive {
+    background-color:#C5F3E5 !important;
+}
+
+        /*---------------------------------common css-----------------------------------------*/
+
+.textfocus {
+    border: 1px solid #99cc00 !important;
+    box-shadow: 0 0 5px 1px #bce0fe !important;
+}
+.texthover {
+    border: 1px solid red !important;
+}
+
+.progressAdd
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(33, 33,33,0.5);
+}

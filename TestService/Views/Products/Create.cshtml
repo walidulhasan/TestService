@@ -1,0 +1,96 @@
+﻿
+@model TestService.Models.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "Create";
+}
+@section styles{
+
+    <link href="~/datedropper/Datedropper3/datedropper.css" rel="stylesheet" />
+}
+<h2 class="text-center my-4" style="color:#020240">Product Add</h2>
+<div class="container mb-3">
+    <div class="container row ml-5">
+        <div class="col ml-5 mt-4">
+            @using (Html.BeginForm("Create", "Products", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+            {
+                <div class="row">
+                    <div class="col-md-8">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "col-form-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control", placeholder = "Product Name" } })
+                                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.ProductsCategoryId, "Category", htmlAttributes: new { @class = "col-form-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.DropDownListFor(model => model.ProductsCategoryId, ViewBag.Postion as SelectList, "----Select one----", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProductsCategoryId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "col-form-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control", placeholder = "Quantity" })
+                                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "col-form-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", placeholder = "Price" })
+                                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.EntryDate, htmlAttributes: new { @class = "col-form-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.EntryDate, new { htmlAttributes = new { @class = "form-control insertJoin", placeholder = "Date of Birth" } })
+                                @Html.ValidationMessageFor(model => model.EntryDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-md-8">
+                                <input type="submit" class="btn btn-primary mr-2" value="Save data" />
+                                <input type="reset" class="btn btn-warning" value="Reset" />
+
+                            </div>
+                            <i class="text-right"> @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-default btn-sm" })</i>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <div class="col-md-5">
+                                <img src="~/images/default.png" width="150" height="150" id="imagePreview" class="mb-3" />
+
+                                @Html.TextBoxFor(model => model.Picture, new { type = "file", @id = "Imageone" })
+
+                                @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/datedropper/Datedropper3/datedropper.js"></script>
+    <script type="text/javascript">
+        $(document).ready(() => {
+            $(".insertJoin").dateDropper(/*"{0:MM/dd/yyyy}"*/);
+        });
+
+        $('#Imageone').change(function (event) {
+            var tmppath = URL.createObjectURL(event.target.files[0]);
+            $("#imagePreview").fadeIn("fast").attr('src', URL.createObjectURL(event.target.files[0]));
+        });
+    </script>
+}
+
+

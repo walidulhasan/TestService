@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = "faq";
+}
+
+<div id="body">
+    <section>
+        <div class="inner-banner-cls">
+            <div class="container">
+                <h1>FAQ</h1>
+            </div>
+        </div>
+        <section id="" class="i-row i-row-odd ir-white">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Defaults -->
+
+                        <div class="panel-group d-accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" data-toggle="collapse" data-parent=".d-accordion" href="#aboutus">
+                                    <h4 class="panel-title">Mens<i class="fa fa-plus pull-right dataplus"></i><i class="fa fa-minus pull-right dataminus" style="display:none"></i></h4>
+                                </div>
+                                <div id="aboutus" class="panel-collapse collapse in">
+                                    <div class="opaque" style="display:none">
+                                        <div class="panel-body opaque_content opaque">
+
+                                            <h3><span>1. &nbsp</span>Can I activate my de-activate test’s account?</h3>
+                                            <p><p><strong>Can I activate my de-activate test’s account?</strong><br></p>
+                                            <br />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="panel-group d-accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" data-toggle="collapse" data-parent=".d-accordion" href="#aboutus">
+                                    <h4 class="panel-title">Women<i class="fa fa-plus pull-right dataplus"></i><i class="fa fa-minus pull-right dataminus" style="display:none"></i></h4>
+                                </div>
+                                <div id="aboutus" class="panel-collapse collapse in">
+                                    <div class="opaque" style="display:none">
+                                        <div class="panel-body opaque_content opaque">
+                                            <h3><span>1. &nbsp</span>Can I activate my de-activate test’s account?</h3>
+                                            <p><p><strong>Can I activate my de-activate test’s account?</strong><br></p>
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="panel-group d-accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" data-toggle="collapse" data-parent=".d-accordion" href="#aboutus">
+                                    <h4 class="panel-title">Orders<i class="fa fa-plus pull-right dataplus"></i><i class="fa fa-minus pull-right dataminus" style="display:none"></i></h4>
+                                </div>
+                                <div id="aboutus" class="panel-collapse collapse in">
+                                    <div class="opaque" style="display:none">
+                                        <div class="panel-body opaque_content opaque">
+
+                                            <h3><span>1. &nbsp</span>Missed the delivery of my order?</h3>
+                                            <p><p>In case you miss the order the courier service will reach you on the next working day. You can even check your SMS to have an update of its next visit for delivery.</p><div><br></div><p><br></p>
+                                            <br />
+                                            <h3><span>2. &nbsp</span>What if I am unable to collect the order for the first time, will it be delivered again?</h3>
+                                            <p><p><span style="background-color:rgb(249, 249, 249); color:rgb(95, 95, 95); font-family:arial; font-size:14px">Yes, the order will deliver again on the next working day, if you are unable to collect it for the first time.</span><br></p>
+                                            <br />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="panel-group d-accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" data-toggle="collapse" data-parent=".d-accordion" href="#aboutus">
+                                    <h4 class="panel-title">Getting Started<i class="fa fa-plus pull-right dataplus"></i><i class="fa fa-minus pull-right dataminus" style="display:none"></i></h4>
+                                </div>
+                                <div id="aboutus" class="panel-collapse collapse in">
+                                    <div class="opaque" style="display:none">
+                                        <div class="panel-body opaque_content opaque">
+
+                                            <h3><span>1. &nbsp</span>Who can Sell?</h3>
+                                            <p><p style="margin-left:1cm">Anyone planning to start their business by selling their product is welcome. In order to start your business, you need to have following documents:</p><ul style="margin-left:1cm"><li><p>GSTIN</p></li><li><p>PAN Card (Personal PAN for business type “Proprietorship” and Personal + Business PAN for business type as “Company”)</p></li><li><p>GSTIN/TIN Number (not mandatory for few categories)</p></li><li><p>Bank account and supporting KYC documents (Address Proof, and Cancelled cheque)</p></li><li><p>Minimum of 1 unique products to sell.</p></li></ul>
+                                            <br />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        @section scripts{
+            <script src="~/Scripts/jquery-1.11.1.min.js" type="text/javascript"></script>
+            <script>
+                // Hide the answers (expanded content)
+                $(document).ready(function () {
+                    //  $(".opaque").hide();
+                    // On question click
+
+                    $(".d-accordion").on('click', function () {
+                        if ($(this).find('.opaque').css('display') == 'block') {
+                            if ($(".dataminus").css('display', 'block')) {
+                                $(".dataminus").css('display', 'none');
+                                $(".dataplus").css('display', 'block');
+                            }
+                            else {
+                                $(".dataminus").css('display', 'none');
+                                $(".dataplus").css('display', 'block');
+                            }
+                            $(this).find('.opaque').hide();
+                            $(this).find('.dataminus').hide();
+                            $(this).find('.dataplus').show();
+                            return false;
+                        }
+                        if ($(".dataminus").css('display', 'block')) {
+                            $(".dataminus").css('display', 'none');
+                            $(".dataplus").css('display', 'block');
+                        }
+                        else {
+                            $(".dataminus").css('display', 'none');
+                            $(".dataplus").css('display', 'block');
+                        }
+                        $('.opaque').hide();
+                        $(this).find('.opaque').show();
+                        $(this).find('.dataminus').show();
+                        $(this).find('.dataplus').hide();
+                        return false;
+                    });
+                });
+            </script>
+        }
+    </section>
+</div>

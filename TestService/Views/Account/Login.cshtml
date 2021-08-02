@@ -1,0 +1,219 @@
+﻿@model TestService.Models.ViewModels.LoginVM
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="body">
+    <section>
+
+        <style type="text/css">
+
+
+
+            .log-regist-banner-overlay {
+                background: none;
+            }
+
+            .internal-menu {
+                margin: 40px auto 0;
+                display: block;
+                width: 550px;
+                border-radius: 6px 6px 0 0;
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+                .internal-menu ul li a {
+                    color: #fff;
+                }
+
+                .internal-menu ul .active {
+                    background: #000;
+                }
+
+                    .internal-menu ul .active a {
+                        color: #f89102;
+                    }
+
+            .mendatory {
+                display: none;
+            }
+
+            .referral-legal-pages ul li a {
+                color: #f89102;
+            }
+        </style>
+
+        <div>
+
+            <div>
+                <div style="overflow: hidden">
+                    <input type="hidden" class="rurl" value="/merchant/freebusinesskeywords" />
+
+                    <div class="reg-shadow-container">
+
+                        <div class="log-regist-banner">
+
+
+                            <div class="container">
+
+                                <div class="row">
+                                    <div class="col-md-12 ">
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-push-8">
+                                                @using (Html.BeginForm())
+                                                {
+                                                    @Html.AntiForgeryToken()
+                                                    <div class="login" id="txt_login">
+                                                        <div class="log-regist-banner register">
+
+                                                            <h2>Login </h2>
+                                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                            <div class="log-pg-content">
+                                                                <div class="login_content">
+                                                                    <p class="text-left">User Name</p>
+                                                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                                                </div>
+                                                                <div class="login_content">
+                                                                    <p class="text-left">Password</p>
+                                                                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                                </div>
+                                                                <div class="m-t-1">
+                                                                    <input type="submit"  class="button button-3d-highlight button-circle btn_block" value="Login" />
+                                                                </div>
+                                                                <a id="forgotPassword" style="cursor: pointer; color: #f89102;">Forgot password? </a>
+                                                                <dt class="clearfix"><i class="color-white">Do not have an account?</i>  @Html.ActionLink(" SingUp", "Register", "Account", new { }, new { @class = "hidden-sm hidden-xs" })</dt>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                <div class="login" id="FormForgotPassword" style="display: none;">
+                                                    <div class="log-regist-banner register">
+                                                        <h2>Forgot Password </h2>
+                                                        <div class="login_content">
+                                                            <p class="text-left">Enter Email ID</p>
+                                                            <input type="text" id="txtEmailIDRecover" />
+                                                        </div>
+                                                        <div class="m-t-1">
+                                                            <input type="button" id="BtnForgotRecover" class="button button-3d-highlight button-circle btn_block" value="Submit Now" />
+                                                        </div>
+                                                        <span>Do you have an account?  <a id="singIn" style="cursor: pointer">Login </a></span>
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                                <div class="login" id="vefication" style="display:none">
+                                                    <div class="log-regist-banner register text-left">
+                                                        <div class="login_content">
+                                                            <p>Email ID</p>
+                                                            <input type="text" id="txtloginid1" />
+                                                        </div>
+                                                        <div class="login_content">
+                                                            <p>Password</p>
+                                                            <input type="password" id="txtpasswordLogin1" />
+                                                        </div>
+                                                        <div class="login_content">
+                                                            <p>GA Key</p>
+                                                            <input type="password" id="txtgakey" />
+                                                        </div>
+                                                        <div class="m-t-1">
+                                                            <input type="button" id="btnSignIn1" class="button button-3d-highlight button-circle btn_block" value="Login" />
+                                                        </div>
+                                                        <a id="forgotPassword" style="cursor: pointer">Forgot password? </a>
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 col-md-pull-4">
+                                                <div class="row">
+
+                                                    <div class="col-md-12 log-banner">
+                                                        <h1>
+                                                            <font>Start Selling</font> On <font>Pikjets</font><br />  and Earn Your Profit the Best
+
+                                                        </h1>
+                                                    </div>
+
+                                                    <div class="col-md-6 col-sm-6 col-xs-12 register_content_inner">
+                                                        <div class="register_icons border_1 pull-left">
+                                                            <img src="~/images/visibilty-cion.svg" alt="" />
+                                                        </div>
+                                                        <h3 class="t_c_1">Increase Visibility of Your Product</h3>
+                                                        <p>With our Social media tool, make your product visible globally</p>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12 register_content_inner">
+                                                        <div class="register_icons border_2 pull-left">
+                                                            <img src="~/images/zero-charges.svg" alt="" />
+                                                        </div>
+                                                        <h3 class="t_c_2">Zero Charges</h3>
+                                                        <p>You don’t have to pay any charges for login and registration</p>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12 register_content_inner">
+                                                        <div class="register_icons border_3 pull-left">
+                                                            <img src="~/images/fast-eazy-icon.svg" alt="" />
+                                                        </div>
+                                                        <h3 class="t_c_3">Fast & Easy</h3>
+                                                        <p>Register yourself with a single click, no download requires</p>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12 register_content_inner">
+                                                        <div class="register_icons border_4 pull-left">
+                                                            <img src="~/images/track-icon.svg" alt="" />
+                                                        </div>
+                                                        <h3 class="t_c_4">Track Your Visitors</h3>
+                                                        <p>With Complete Insight View Of Your Visitors</p>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12 register_content_inner">
+                                                        <div class="register_icons border_5 pull-left">
+                                                            <img src="~/images/visitor-track-icon.svg" alt="" />
+                                                        </div>
+                                                        <h3 class="t_c_5">Easy Tracking</h3>
+                                                        <p>Get update with complete observation of your customer</p>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12 register_content_inner">
+                                                        <div class="register_icons border_6 pull-left">
+                                                            <img src="~/images/customer-convert.svg" alt="" />
+                                                        </div>
+                                                        <h3 class="t_c_6">Convert Visitor Into Customer</h3>
+                                                        <p>Flexible lead capturing tool </p>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id='divProgressBarSignup'></div>
+                <div class="registerconformation-popup">
+                    <h2 style="font-size: 19px !important">Registration Request Submitted Successfully ! </h2>
+                    <p>
+                        Verification link has been send to your registered email ID.
+                        <br />
+                        Kindly verify it to confirm your Account.
+                    </p>
+                    <span class="btn"><a id="thank" style="cursor: pointer">Thank You</a>  </span>
+                </div>
+                <div class="clear"></div>
+                <div class="registerconformation-popup1 recovery">
+                    <h2>
+                        Password Recovery
+                    </h2>
+                    <p>
+                        An email is sent to
+                        <label id="Label1"></label>
+                        <br />
+                        Please Check your email
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+

@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<TestService.Models.Products>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.11.1.min.js"></script>
+<div style="margin-left:100px">
+    <div class="col">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th class="bg-green" style="color:white">Product Name</th>
+                <th class="bg-green" style="color:white">Quantity</th>
+                <th class="bg-green" style="color:white">Price</th>
+                <th class="bg-green" style="color:white">Entry Date</th>
+                <th class="bg-green" style="color:white">Picture</th>
+                <th class="bg-green" style="color:white">Products Category</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><p class="text-center">@item.ProductName</p></td>
+                    <td><p class="text-center">@item.Quantity</p></td>
+                    <td><p class="text-center">@item.Price</p></td>
+                    <td><p class="text-center">@item.EntryDate.ToShortDateString() </p></td>
+                    <td>
+                        <p class="text-center"><img src="@Url.Content(item.Picture)" width="40" height="30" /></p>
+                    </td>
+                    <td><p class="text-center">@item.ProductsCategory.categoryName</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+
+
